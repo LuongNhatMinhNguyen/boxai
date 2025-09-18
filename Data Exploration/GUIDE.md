@@ -5,18 +5,9 @@ Python package with reusable code.
 - `__init__.py`: exposes `FinalTotalPredictor` (and version).
 - `models/`: model classes (currently `final_total_predictor.py`).
 
-## artifacts/
-Holds saved model artifacts for inference.
-- `final_total/`: XGBoost booster + metadata (`model.booster.json`, `metadata.json`, `schema.json`, `training_metrics.json`).
-Versioning suggestion: create subfolders like `final_total/v1/`, `final_total/v2/`.
-
 ## notebooks/
-Jupyter notebooks separated by purpose.
 - `XGB_Model.ipynb`: training + artifact saving.
 - `FinalTotal_Inference.ipynb`: minimal inference usage.
-
-## artifacts_final_total/ (legacy)
-Original location of artifacts before cleanup
 
 ## Data Wrangling.ipynb
 Cleaning work 
@@ -30,16 +21,5 @@ Explains structure for quick onboarding.
 ---
 ### Quick Start
 1. Train: open `notebooks/XGB_Model.ipynb` and run all cells (creates/overwrites `artifacts/final_total`).
-2. Infer: open `notebooks/FinalTotal_Inference.ipynb`, edit `wk1_value` or list and run.
+2. Infer: open `notebooks/FinalTotal_Inference.ipynb`, edit `wk1_value` or list and run
 
-### Add a New Model Later
-Create a new predictor file in `boxai/models/`, train in a new training notebook, save to `artifacts/<model_name>/`.
-
-### Versioning Pattern
-```
-artifacts/
-  final_total/
-    v1/
-    v2/
-```
-Point inference to the desired version path.
